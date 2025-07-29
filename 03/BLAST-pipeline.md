@@ -18,3 +18,5 @@ nextflow run metagenomic_screening.nf -c metagenomic_screening.config \
     --minPercentIdentity 95 --minSupportPercent 0.001 --lcaCoveragePercent 80 -resume
 ```
 
+The input file is a tsv with Library, BAM location, BAM index location
+
