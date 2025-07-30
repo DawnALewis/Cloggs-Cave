@@ -1,4 +1,4 @@
-The libraries filtered with the concatenated reference aligned with BWA, will have a large amount of erroneous reads that will overwhelmed trace species (e.g. human). In order to clean these filtered libraries, we split each library bam by species and then BLAST each split library. We then run mapDamage on the BLAST-asigned species reads against their original reference genome to ascertain damage profiles. 
+The libraries that were filtered with the concatenated reference by alignment with BWA will have a large amount of erroneous reads that will overwhelmed trace species (e.g. human). In order to clean these filtered libraries, we split each library bam by species and then BLAST each split library. We then run mapDamage on the BLAST-asigned species reads against their original reference genome to ascertain damage profiles. 
 
 ```
 #!/bin/bash
