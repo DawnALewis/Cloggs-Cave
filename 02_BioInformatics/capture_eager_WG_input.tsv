@@ -1,0 +1,11 @@
+Sample_Name	Library_ID	Lane	Colour_Chemistry	SeqType	Organism	Strandedness	UDG_Treatment	R1	R2	BAM
+24964	HSapiens_Lib2307_09	3	2	PE	Homo_sapiens	double	none	/<PathToDemuxFiles>/S3.2307_9.pair1.fastq.gz	/<PathToDemuxFiles>/S3.2307_9.pair2.fastq.gz	NA
+24514	HSapiens_Lib2307_19	3	2	PE	Homo_sapiens	double	none	/<PathToDemuxFiles>/S4.2307_19.pair1.fastq.gz	/<PathToDemuxFiles>/S4.2307_19.pair2.fastq.gz	NA
+24526	HSapiens_Lib2307_43	3	2	PE	Homo_sapiens	double	none	/<PathToDemuxFiles>/S3.2307_43.pair1.fastq.gz	/<PathToDemuxFiles>/S3.2307_43.pair2.fastq.gz	NA
+24533	HSapiens_Lib2307_50	3	2	PE	Homo_sapiens	double	none	/<PathToDemuxFiles>/S3.2307_50.pair1.fastq.gz	/<PathToDemuxFiles>/S3.2307_50.pair2.fastq.gz	NA
+24529	HSapiens_Lib2307_58	3	2	PE	Homo_sapiens	double	none	/<PathToDemuxFiles>/S3.2307_58.pair1.fastq.gz	/<PathToDemuxFiles>/S3.2307_58.pair2.fastq.gz	NA
+24544	HSapiens_Lib2307_62	3	2	PE	Homo_sapiens	double	none	/<PathToDemuxFiles>/S3.2307_62.pair1.fastq.gz	/<PathToDemuxFiles>/S3.2307_62.pair2.fastq.gz	NA
+24549	HSapiens_Lib2307_63	3	2	PE	Homo_sapiens	double	none	/<PathToDemuxFiles>/S3.2307_63.pair1.fastq.gz	/<PathToDemuxFiles>/S3.2307_63.pair2.fastq.gz	NA
+24523	HSapiens_Lib2307_29	3	2	PE	Homo_sapiens	double	none	/<PathToDemuxFiles>/S3.2307_29.pair1.fastq.gz	/<PathToDemuxFiles>/S3.2307_29.pair2.fastq.gz	NA
+24519	HSapiens_Lib2307_24	3	2	PE	Homo_sapiens	double	none	/<PathToDemuxFiles>/S3.2307_24.pair1.fastq.gz	/<PathToDemuxFiles>/S3.2307_24.pair2.fastq.gz	NA
+24513	HSapiens_Lib2307_34	3	2	PE	Homo_sapiens	double	none	/<PathToDemuxFiles>/S3.2307_34.pair1.fastq.gz	/<PathToDemuxFiles>/S3.2307_34.pair2.fastq.gz	NA
