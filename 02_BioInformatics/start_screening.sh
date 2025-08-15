@@ -3,11 +3,11 @@
 
 module load Nextflow/21.03.0
 
-FASTA=/hpcfs/groups/acad_users/dawn/validation/references/Cloggs_reference_May2025/four_species.fna
-HUMAN_CONTIGS=/hpcfs/groups/acad_users/dawn/validation/references/Cloggs_reference_May2025/Human.contigs
-RABBIT_CONTIGS=/hpcfs/groups/acad_users/dawn/validation/references/Cloggs_reference_May2025/Rabbit.contigs
-WALLABY_CONTIGS=/hpcfs/groups/acad_users/dawn/validation/references/Cloggs_reference_May2025/Wallaby.contigs
-DOG_CONTIGS=/hpcfs/groups/acad_users/dawn/validation/references/Cloggs_reference_May2025/Dog.contigs
+FASTA=/<PathTo>/references/Cloggs_reference_May2025/four_species.fna
+HUMAN_CONTIGS=/<PathTo>/references/Cloggs_reference_May2025/Human.contigs
+RABBIT_CONTIGS=/<PathTo>/references/Cloggs_reference_May2025/Rabbit.contigs
+WALLABY_CONTIGS=/<PathTo>/references/Cloggs_reference_May2025/Wallaby.contigs
+DOG_CONTIGS=/<PathTo>/references/Cloggs_reference_May2025/Dog.contigs
 
 
 nextflow run metagenomic_screening.nf -c metagenomic_screening.config \
