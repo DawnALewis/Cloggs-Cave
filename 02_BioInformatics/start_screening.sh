@@ -12,6 +12,6 @@ DOG_CONTIGS=/<PathTo>/references/Cloggs_reference_May2025/Dog.contigs
 
 nextflow run metagenomic_screening.nf -c metagenomic_screening.config \
     --inputFile inputFile.tsv --human_contig ${HUMAN_CONTIGS} --wallaby_contig ${WALLABY_CONTIGS} \
-    --rabbit_contig ${WALLABY_CONTIGS} --Dog_contig ${DOG_CONTIGS} --fasta ${FASTA} \
+    --rabbit_contig ${WALLABY_CONTIGS} --dog_contig ${DOG_CONTIGS} --fasta ${FASTA} \
     --minPercentIdentity 95 --minSupportPercent 0.001 --lcaCoveragePercent 80 -resume
     ```
