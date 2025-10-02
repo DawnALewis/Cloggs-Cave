@@ -1,1 +1,38 @@
+#!/bin/bash
+#SBATCH --mail-type=END 
+#SBATCH --mail-type=FAIL
+#SBATCH --mail-user=a1867445@adelaide.edu.au
 
+#module --ignore-cache load Nextflow/21.03.0
+
+module load Nextflow/21.03.0
+
+INPUT_FILE=input.tsv
+FASTA=/hpcfs/groups/acad_users/dawn/validation/references/Cloggs_reference_May2025/four_species.fna
+FASTA_INDEX=/hpcfs/groups/acad_users/dawn/validation/references/Cloggs_reference_May2025/four_species.fna.fai
+BWA_INDEX=/hpcfs/groups/acad_users/dawn/validation/references/Cloggs_reference_May2025/
+
+
+nextflow run /hpcfs/groups/acad_users/shyrav/resources/eager-v2.4.5-sharding-adna-trim-l25/ -c ./phoenix.config \
+	-with-singularity \
+	-profile singularity \
+	-resume \
+	--input ${INPUT_FILE} \
+	--fasta ${FASTA} \
+	--fasta_index ${FASTA_INDEX} \
+	--bwa_index ${BWA_INDEX} \
+	--large_ref \
+	--skip_fastqc \
+	--skip_adapterremoval \
+	--skip_preseq \
+    	--mapper 'bwaaln' \
+    	--bwaalnn 0.01 \
+    	--bwaalno 2 \
+    	--bwaalnl 1024 \
+        --shard_bwa \
+        --chunk_size 10000000 \
+ 	--run_bam_filtering \
+	--bam_mapping_quality_threshold 0 \
+	--bam_unmapped_type 'both' \
+	--dedupper 'dedup' \
+	--dedup_all_merged
