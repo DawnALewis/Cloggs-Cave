@@ -8,11 +8,12 @@ The aDNA-trimmed libraries classified using the k-mer based [krakenUniq](https:/
 The output matrix identified 
 
 ### Filtered workflow targetting human DNA from shotgun data using the metascreen pipeline
-This nextflow pipeline was developed by [Shyamsundar Ravishankar](https://github.com/shyama-mama/) 
+This [nextflow pipeline](https://github.com/DawnALewis/Cloggs-Cave/blob/main/02_BioInformatics/start_screening.sh) was developed by [Shyamsundar Ravishankar](https://github.com/shyama-mama/) 
 
 BWA output (.BAM files) from Eager are split by reference species into four .BAMs due to size. To do this, make a list of contigs for each reference species. This is has the potential to lose reads which could map to multiple species and are therefore randomly assigned in BWA. Small libraries may be able to avoid this splitting. 
 The split .BAMs then undergo Basic Local Alignment Search Tool (BLAST) and Lowest Common Ancestor (LCA) assignment using conservative parameters (see Supplementary Information for LCA parameter testing). 
 DNA damage is then assessed by MapDamage against the original species reference. 
+
 
 ### Workflow for human capture Data
 
