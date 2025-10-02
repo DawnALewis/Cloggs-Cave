@@ -4,6 +4,10 @@ Shotgun metagenomic libraries from sequencing run YYYY were pre-processed using 
 ### Initial metagenomic screening
 The aDNA-trimmed libraries were parsed through [krakenUniq](https://github.com/fbreitwieser/krakenuniq) metagenomic classifier - see script run_krakenUniq.sh 
 The output matrix
+
+### Eager Pipeline to filter libraries for target reads
+
+
 ### Filtered workflow targetting human DNA using the metascreen pipeline
 This nextflow pipeline was developed by [Shyamsundar Ravishankar](https://github.com/shyama-mama/) 
 
