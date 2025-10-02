@@ -9,7 +9,7 @@ The output matrix identified
 ### Eager Pipeline to filter libraries for target reads
 
 
-### Filtered workflow targetting human DNA using the metascreen pipeline
+### Filtered workflow targetting human DNA from shotgun data using the metascreen pipeline
 This nextflow pipeline was developed by [Shyamsundar Ravishankar](https://github.com/shyama-mama/) 
 
 BWA output (.BAM files) are split by reference species into four .BAMs due to size. To do this, make a list of contigs for each reference species. This is has the potential to lose reads which have mapped to multiple species. Small libraries may be able to avoid this splitting. 
