@@ -17,3 +17,5 @@ The split .BAMs then undergo Basic Local Alignment Search Tool (BLAST) and Lowes
 DNA damage is then assessed by MapDamage against the original species reference. 
 
 ### Workflow for human capture Data
+
+Human capture data were pre-processed using the [nf-core/eager](https://github.com/nf-core/eager) pipeline with aDNA-trim and sharding integration per [shyama-mama](https://github.com/shyama-mama/eager/tree/v2.4.5-sharding). Libraries were mapped against the human reference genome GRCh37d5. See capture_run_eager.sh for full parameters. Damage Profiler is the only damage profiler availabel in the bespoke pipeline and so output was re-assessed with MapDamage for consistency.
