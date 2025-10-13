@@ -1,0 +1,9 @@
+for l in /gpfs/users/a1867445/Cloggs_capture/results/deduplication/*/*.bam; do
+outFile=$(basename $l "_PE.shard_merged.mapped.bam")
+samtools fasta ${l} > /gpfs/users/a1867445/Cloggs_capture/BLAST/fastas/${outFile}.fna
+done
+
+
+for l in /gpfs/users/a1867445/Cloggs_capture/BLAST/fastas/*; do
+sbatch -A strategic -p highmem --mem 800G run_blast.sh $l
+done
