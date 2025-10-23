@@ -1,4 +1,4 @@
-## Correlation test for samples with more than 500 reads
+## Pearson’s correlation coefficient test for samples with more than 500 reads
 
 ```
 library(tidyverse)
