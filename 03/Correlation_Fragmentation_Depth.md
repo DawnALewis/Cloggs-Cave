@@ -144,7 +144,7 @@ ggplot(long_df, aes(x = Mean_Length, y = Excavation_Unit, color = Species)) +
 
 
 ```
-| Species | n (>500 reads) | correlation score | p value |
+| Species | n (>100 reads) | correlation score | p value |
 |---|---|---|---|
 |Capture H.Sapiens|     8  |0.380   |0.354 
 |Carnivora |              8  |0.0916  |0.829 
