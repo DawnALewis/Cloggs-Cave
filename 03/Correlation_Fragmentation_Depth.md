@@ -79,7 +79,7 @@ ggplot(long_df, aes(x = Mean_Length, y = Excavation_Unit, color = Species)) +
 <img width="1161" height="868" alt="image" src="https://github.com/user-attachments/assets/85a056d2-5b0a-4335-b4ea-959afa5430f6" />
 
 
-## Correlation test for samples with more than 100 reads
+## Pearsons Correlation test for samples with more than 100 reads
 
 ```
 library(tidyverse)
@@ -130,18 +130,72 @@ cor_results <- long_df %>%
 
 print(cor_results)
 
-# Plot
+# Prepare correlation labels
+cor_labels <- cor_results %>%
+  mutate(
+    label = paste0("r = ", round(cor, 2))
+  )
+
+# Scatterplot with correlation labels
 ggplot(long_df, aes(x = Mean_Length, y = Excavation_Unit, color = Species)) +
   geom_point(size = 3, alpha = 0.8) +
   geom_smooth(aes(x = Mean_Length, y = Excavation_Unit), method = "lm", se = FALSE) +
   scale_y_reverse() +   # largest XUs at bottom
   theme_minimal(base_size = 14) +
+  theme(
+    panel.grid = element_blank(),
+    axis.line = element_line(color = "black"),
+    axis.text.x = element_text(margin = margin(t = 5))
+  ) +
   labs(
     title = "Correlation between DNA Fragment Length and Excavation Depth (Reads >= 100)",
     x = "Mean Fragment Length (bp)",
-    y = "Excavation Unit (Depth, deeper → bottom)"
+    y = "Excavation Unit"
+  ) +
+  geom_text(
+    data = cor_labels,
+    aes(x = max(long_df$Mean_Length) * 0.95,  # position near right edge
+        y = max(long_df$Excavation_Unit) - 1,  # position near top
+        label = label),
+    color = "black",
+    inherit.aes = FALSE,
+    hjust = 1
   )
 
+
+## plotting
+
+# 1. Prepare labels with r values
+legend_labels <- cor_results %>%
+  mutate(
+    Species = ifelse(Species == "Homo", "Capture (H.Sapiens)", Species),
+    label = paste0(Species, " (r = ", round(cor, 2), ")")
+  )
+
+# 2. Make a named vector for scale_color_manual
+species_colors <- RColorBrewer::brewer.pal(n = n_distinct(long_df$Species), name = "Set1")
+names(species_colors) <- unique(long_df$Species)
+
+labels_vector <- setNames(legend_labels$label, legend_labels$Species)
+
+# 3. Plot with updated legend
+ggplot(long_df, aes(x = Mean_Length, y = Excavation_Unit, color = Species)) +
+  geom_point(size = 3, alpha = 0.8) +
+  geom_smooth(method = "lm", se = FALSE) +
+  scale_y_reverse() +   # largest XUs at bottom
+  scale_color_manual(name = "Target", values = species_colors, labels = labels_vector) +
+  theme_minimal(base_size = 14) +
+  theme(
+    panel.grid = element_blank(),
+    axis.line = element_line(color = "black"),
+    axis.text.x = element_text(margin = margin(t = 5)),
+    legend.position = "right"   # legend on right side
+  ) +
+  labs(
+    title = "Correlation between fragmentation Depth (Reads >= 100)",
+    x = "Mean Fragment Length (bp)",
+    y = "Excavation Unit"
+  )
 
 ```
 | Species | n (>100 reads) | correlation score | p value |
