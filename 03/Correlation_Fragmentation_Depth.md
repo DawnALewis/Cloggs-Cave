@@ -47,20 +47,18 @@ cor_results <- long_df %>%
     p_value = if (n >= 3) cor.test(Excavation_Unit, Mean_Length)$p.value else NA_real_
   )
 
-print(cor_results)
-
-
-## plotting
+## Plotting
 
 legend_labels <- cor_results %>%
   mutate(
     Species = ifelse(Species == "Homo", "Capture (H.Sapiens)", Species),
-    label = paste0(Species, " (r = ", round(cor, 2), ")")
+    label = paste0(Species, " (r = ", round(cor, 2), ", p = ", signif(p_value, 2), ")")
   )
 
 
 species_colors <- RColorBrewer::brewer.pal(n = n_distinct(long_df$Species), name = "Set1")
 names(species_colors) <- unique(long_df$Species)
+
 
 labels_vector <- setNames(legend_labels$label, legend_labels$Species)
 
@@ -75,10 +73,10 @@ ggplot(long_df, aes(x = Mean_Length, y = Excavation_Unit, color = Species)) +
     panel.grid = element_blank(),
     axis.line = element_line(color = "black"),
     axis.text.x = element_text(margin = margin(t = 5)),
-    legend.position = "right"   # legend on right side
+    legend.position = "right"
   ) +
   labs(
-    title = "Correlation between fragmentation Depth (Reads >= 500)",
+    title = "Correlation between fragmentation and depth (Reads >= 500)",
     x = "Mean Fragment Length (bp)",
     y = "Excavation Unit"
   )
@@ -95,9 +93,10 @@ ggplot(long_df, aes(x = Mean_Length, y = Excavation_Unit, color = Species)) +
 | Primate | 7 | -0.0493 | 0.916 |
 
 
+<img width="1051" height="645" alt="image" src="https://github.com/user-attachments/assets/b6f2d7c0-3598-4f27-a200-35193747b266" />
 
 
-<img width="993" height="690" alt="image" src="https://github.com/user-attachments/assets/e0419dcb-120d-4b66-acc9-e9067aea199e" />
+
 
 
 
@@ -150,21 +149,21 @@ cor_results <- long_df %>%
     p_value = if (n >= 3) cor.test(Excavation_Unit, Mean_Length)$p.value else NA_real_
   )
 
-print(cor_results)
-
-
-## plotting
+## Plotting
 
 legend_labels <- cor_results %>%
   mutate(
     Species = ifelse(Species == "Homo", "Capture (H.Sapiens)", Species),
-    label = paste0(Species, " (r = ", round(cor, 2), ")")
+    label = paste0(Species, " (r = ", round(cor, 2), ", p = ", signif(p_value, 2), ")")
   )
+
 
 species_colors <- RColorBrewer::brewer.pal(n = n_distinct(long_df$Species), name = "Set1")
 names(species_colors) <- unique(long_df$Species)
 
+
 labels_vector <- setNames(legend_labels$label, legend_labels$Species)
+
 
 ggplot(long_df, aes(x = Mean_Length, y = Excavation_Unit, color = Species)) +
   geom_point(size = 3, alpha = 0.8) +
@@ -176,10 +175,10 @@ ggplot(long_df, aes(x = Mean_Length, y = Excavation_Unit, color = Species)) +
     panel.grid = element_blank(),
     axis.line = element_line(color = "black"),
     axis.text.x = element_text(margin = margin(t = 5)),
-    legend.position = "right"   # legend on right side
+    legend.position = "right"
   ) +
   labs(
-    title = "Correlation between fragmentation Depth (Reads >= 100)",
+    title = "Correlation between fragmentation and depth (Reads >= 100)",
     x = "Mean Fragment Length (bp)",
     y = "Excavation Unit"
   )
@@ -194,6 +193,7 @@ ggplot(long_df, aes(x = Mean_Length, y = Excavation_Unit, color = Species)) +
 
 
 
-<img width="993" height="690" alt="image" src="https://github.com/user-attachments/assets/1f658e50-34d5-48be-80da-e96719c4f6e8" />
+<img width="1051" height="645" alt="image" src="https://github.com/user-attachments/assets/648374c5-3317-4f18-a991-91ff45da3771" />
+
 
 
