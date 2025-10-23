@@ -63,10 +63,10 @@ ggplot(long_df, aes(x = Mean_Length, y = Excavation_Unit, color = Species)) +
 
 ```
 
-  Species                 n     cor p_value
-  <chr>               <int>   <dbl>   <dbl>
-1 Capture (H.Sapiens)     6  0.708    0.116
-2 Diprotodontia          29  0.201    0.295
-3 Primate                 7 -0.0493   0.916
+  Species                 n     cor p_value<br>
+  <chr>               <int>   <dbl>   <dbl><br>
+1 Capture (H.Sapiens)     6  0.708    0.116<br>
+2 Diprotodontia          29  0.201    0.295<br>
+3 Primate                 7 -0.0493   0.916<br>
 
 <img width="1161" height="868" alt="image" src="https://github.com/user-attachments/assets/85a056d2-5b0a-4335-b4ea-959afa5430f6" />
