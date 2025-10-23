@@ -70,9 +70,11 @@ ggplot(long_df, aes(x = Mean_Length, y = Excavation_Unit, color = Species)) +
 3 Primate                 7 -0.0493   0.916<br>
 
 | Species | n (>500 reads) | correlation score | p value |
-|---|---|---|
-| Row 1, Cell 1 | Row 1, Cell 2 | Row 1, Cell 3 |
-| Row 2, Cell 1 | Row 2, Cell 2 | Row 2, Cell 3 |
+|---|---|---|---|
+| Capture H.Sapiens | 6 | 0.708 | 0.116 |
+| Diprotodontia | 29 | 0.201 | 0.295 |
+| Primate | 7 | -0.0493 | 0.916 |
+
 
 
 
