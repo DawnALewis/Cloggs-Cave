@@ -193,6 +193,7 @@ ggplot(long_df, aes(x = Mean_Length, y = Excavation_Unit, color = Species)) +
 |Primate  |              24  |0.159   |0.457 
 
 
-<img width="1161" height="868" alt="image" src="https://github.com/user-attachments/assets/7a0290c4-26e9-4916-961f-88a2fee273e7" />
+
+<img width="993" height="690" alt="image" src="https://github.com/user-attachments/assets/1f658e50-34d5-48be-80da-e96719c4f6e8" />
 
 
