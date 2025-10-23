@@ -69,4 +69,11 @@ ggplot(long_df, aes(x = Mean_Length, y = Excavation_Unit, color = Species)) +
 2 Diprotodontia          29  0.201    0.295<br>
 3 Primate                 7 -0.0493   0.916<br>
 
+| Species | n (>500 reads) | correlation score | p value |
+|---|---|---|
+| Row 1, Cell 1 | Row 1, Cell 2 | Row 1, Cell 3 |
+| Row 2, Cell 1 | Row 2, Cell 2 | Row 2, Cell 3 |
+
+
+
 <img width="1161" height="868" alt="image" src="https://github.com/user-attachments/assets/85a056d2-5b0a-4335-b4ea-959afa5430f6" />
